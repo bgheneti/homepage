@@ -8,19 +8,9 @@ export default class Footer extends Component {
     return (
       <footer className="pv5 bg-near-whited x-sans f4 mid-gray bg-near-white footer">
         <div className="x-viewport">
-          Made with love in Berlin
+          <a href="https://github.com/bgheneti">Github</a>
           <i />
-          <a href="/rss.xml">RSS</a>
-          <i />
-          <a href="mailto:azer@roadbeats.com">E-mail</a>
-          <i />
-          <a href="https://github.com/azer">Github</a>
-          <i />
-          <a href="https://instagram.com/afrikaradyo">Instagram</a>
-          <i />
-          <a href="https://www.youtube.com/channel/UCPZsk0_jd3GuKjeIPilL4qA/videos">
-            Youtube
-          </a>
+          <a href="https://www.linkedin.com/in/bgheneti/">Linkedin</a>
           <a href="#" className="top">
             ↑
           </a>

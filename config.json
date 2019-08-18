@@ -1,10 +1,10 @@
 {
-  "title": "Azer Koçulu",
-  "description": "I build software, also shoot photos.",
-  "url": "https://kodfabrik.com",
+  "title": "Banti Gheneti",
+  "description": "robotics, social entrepreneurship, computer science",
+  "url": "https://gheneti.com",
   "journal": {
-    "title": "Azer Koculu's Journal",
-    "image_url": "https://cldup.com/go95bqT7sK.jpg",
+    "title": "some loose notes",
+    "image_url": "http://web.mit.edu/bgheneti/www/profile.jpg",
     "site_url": "https://kodfabrik.com/journal",
     "feed_url": "https://kodfabrik.com/rss.xml",
     "feed_size": 10

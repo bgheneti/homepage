@@ -29,9 +29,9 @@ export default class SimpleLayout extends Component {
           <meta name="twitter:image" content={this.props.image} />
           <link
             rel="canonical"
-            href={this.props.url || "https://kodfabrik.com"}
+            href={this.props.url || "https://gheneti.com"}
           />
-          <link
+          {/*<link
             rel="icon"
             type="image/png"
             href="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7_s.jpg"
@@ -40,7 +40,7 @@ export default class SimpleLayout extends Component {
             rel="alternate"
             type="application/rss+xml"
             href="https://kodfabrik.com/rss.xml"
-          />
+          />*/}
         </Helmet>
 
         <BurgerMenu location={this.props.location} />

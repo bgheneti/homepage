@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[Azer Koculu's Journal]]></title>
-        <description><![CDATA[I build software, also shoot photos.]]></description>
-        <link>https://kodfabrik.com</link>
+        <title><![CDATA[some loose notes]]></title>
+        <description><![CDATA[robotics, social entrepreneurship, computer science]]></description>
+        <link>https://gheneti.com</link>
         <image>
-            <url>https://cldup.com/go95bqT7sK.jpg</url>
-            <title>Azer Koculu&apos;s Journal</title>
-            <link>https://kodfabrik.com</link>
+            <url>http://web.mit.edu/bgheneti/www/profile.jpg</url>
+            <title>some loose notes</title>
+            <link>https://gheneti.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 20 Apr 2019 12:26:41 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 18 Aug 2019 22:30:47 GMT</lastBuildDate>
         <atom:link href="https://kodfabrik.com/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Low Battery Monitor for Linux (i3)]]></title>
             <link>https://kodfabrik.com/journal/low-battery-monitor-for-linux-i3</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/low-battery-monitor-for-linux-i3</guid>
-            <pubDate>Fri, 30 Nov 2018 23:00:00 GMT</pubDate>
+            <pubDate>Sat, 01 Dec 2018 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[iA Writer Mode for Emacs]]></title>
             <link>https://kodfabrik.com/journal/ia-writer-mode-for-emacs</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/ia-writer-mode-for-emacs</guid>
-            <pubDate>Mon, 01 Oct 2018 22:00:00 GMT</pubDate>
+            <pubDate>Tue, 02 Oct 2018 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Linux Commands For Productivity]]></title>
             <link>https://kodfabrik.com/journal/10-linux-commands-that-will-save-your-time</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/10-linux-commands-that-will-save-your-time</guid>
-            <pubDate>Sun, 12 Aug 2018 22:00:00 GMT</pubDate>
+            <pubDate>Mon, 13 Aug 2018 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[A Good Makefile for Go]]></title>
             <link>https://kodfabrik.com/journal/a-good-makefile-for-go</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/a-good-makefile-for-go</guid>
-            <pubDate>Wed, 08 Aug 2018 22:00:00 GMT</pubDate>
+            <pubDate>Thu, 09 Aug 2018 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Batuhan'ın Sorularına Yanıtlar]]></title>
             <link>https://kodfabrik.com/journal/batuhan-in-sorularina-yanitlar</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/batuhan-in-sorularina-yanitlar</guid>
-            <pubDate>Tue, 05 Jun 2018 22:00:00 GMT</pubDate>
+            <pubDate>Wed, 06 Jun 2018 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Hitchhiker's Guide to Elm]]></title>
             <link>https://kodfabrik.com/journal/elm</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/elm</guid>
-            <pubDate>Sun, 20 May 2018 22:00:00 GMT</pubDate>
+            <pubDate>Mon, 21 May 2018 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Inspirational Quotes in My Notebook]]></title>
             <link>https://kodfabrik.com/journal/inspirational-quotes-in-my-notebook</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/inspirational-quotes-in-my-notebook</guid>
-            <pubDate>Wed, 28 Feb 2018 23:00:00 GMT</pubDate>
+            <pubDate>Thu, 01 Mar 2018 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Introduction to Stellar for Go Developers]]></title>
             <link>https://kodfabrik.com/journal/introduction-to-stellar-for-go-developers</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/introduction-to-stellar-for-go-developers</guid>
-            <pubDate>Tue, 13 Feb 2018 23:00:00 GMT</pubDate>
+            <pubDate>Wed, 14 Feb 2018 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Geleceğin Yazılımcıları İçin Hayatta Kalma Rehberi]]></title>
             <link>https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/gelecegin-yazilimcilari-icin-hayatta-kalma-rehberi</guid>
-            <pubDate>Thu, 01 Feb 2018 23:00:00 GMT</pubDate>
+            <pubDate>Fri, 02 Feb 2018 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2017'de Okuduğum Kitaplar]]></title>
             <link>https://kodfabrik.com/journal/2017-de-okudugum-kitaplar</link>
             <guid isPermaLink="true">https://kodfabrik.com/journal/2017-de-okudugum-kitaplar</guid>
-            <pubDate>Sun, 31 Dec 2017 23:00:00 GMT</pubDate>
+            <pubDate>Mon, 01 Jan 2018 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

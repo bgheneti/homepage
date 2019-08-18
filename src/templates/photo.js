@@ -39,7 +39,7 @@ export default class Slideshow extends Component {
 
     if (typeof window === "undefined") return
 
-    img(photo.sizes.small.url, err => {
+    img(photo.sizes.medium.url, err => {
       if (err || done) return
 
       this.setState({
@@ -92,6 +92,8 @@ export default class Slideshow extends Component {
 
     const width = window.innerWidth
 
+    return "medium"
+
     if (width < 800) return "medium"
     if (width < 1100) return "large"
     if (width < 1700) return "xlarge"
@@ -113,7 +115,7 @@ export default class Slideshow extends Component {
         desc="Selection of some photos I shot."
         type="photo"
         url={url}
-        image={photo.sizes.xlarge.url}
+        image={photo.sizes.medium.url}
         newsletter
       >
         <Link to="/photography" className="close-button">
@@ -157,7 +159,7 @@ export default class Slideshow extends Component {
 
   renderLoading() {
     const thumbnailCSS = {
-      backgroundImage: `url(${this.state.photo.sizes.small.url})`
+      backgroundImage: `url(${this.state.photo.sizes.medium.url})`
     }
 
     return (
@@ -176,30 +178,18 @@ export default class Slideshow extends Component {
 }
 
 export const photoQuery = graphql`
-  query PhotographById($path: String!) {
+  query PhotographById($pagePath: String!) {
     site {
       siteMetadata {
         title
       }
     }
 
-    photosJson(path: { eq: $path }) {
+    photosJson(path: { eq: $pagePath }) {
       path
       title
       sizes {
-        small {
-          url
-        }
         medium {
-          url
-        }
-        large {
-          url
-        }
-        xlarge {
-          url
-        }
-        xxlarge {
           url
         }
       }

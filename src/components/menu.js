@@ -13,19 +13,12 @@ export default class Menu extends Component {
     return (
       <header className="menu x-sans f4 fw4">
         <div className="inner pb4 relative x-viewport">
-          <a className="absolute x-inherit no-underline gray" href="/">
-            Azer Koçulu
-          </a>
-          <a
-            className="support-link absolute right-0 x-inherit no-underline gray br-pill bg-near-white hover-bg-light-gray hover-near-black"
-            target="_blank"
-            href="https://patreon.com/azerkoculu"
-          >
-            Patrons
+          <a className="absolute x-inherit no-underline black" href="/">
+            Banti Gheneti
           </a>
           <div className="links tc">
             {this.props.footer
-              ? this.renderLink({ to: "/", title: "Homepage" })
+              ? this.renderLink({ to: "/photography", title: "Homepage" })
               : null}
             {links.map((l, i) => this.renderLink(l, i))}
           </div>

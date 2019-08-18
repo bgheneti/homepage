@@ -48,7 +48,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: edge.node.frontmatter.path,
             component: blogPost,
             context: {
-              path: edge.node.frontmatter.path
+              pagePath: edge.node.frontmatter.path
             }
           })
 
@@ -57,7 +57,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               path: edge.node.frontmatter.aliasPath,
               component: blogPost,
               context: {
-                path: edge.node.frontmatter.path
+                pagePath: edge.node.frontmatter.path
               }
             })
           }
@@ -68,7 +68,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: photo.path,
             component: photoComp,
             context: {
-              path: photo.path
+              pagePath: photo.path
             }
           })
         })

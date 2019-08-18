@@ -9,7 +9,7 @@ export default function header(props) {
   return (
     <div className="page-header x-serif">
       <div className="page-header-inner relative">
-        <div className="absolute page-header-image br-100 w4" style={bg} />
+        <div className="absolute page-header-image w5" style={bg} />
         {props.children}
       </div>
     </div>

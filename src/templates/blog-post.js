@@ -105,13 +105,13 @@ export default class BlogPostTemplate extends Component {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query BlogPostByPath($pagePath: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: { path: { eq: $pagePath } }) {
       id
       html
       frontmatter {

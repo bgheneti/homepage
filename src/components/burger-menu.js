@@ -25,7 +25,7 @@ export default class BurgerMenu extends Component {
         <div className="hamburger" onClick={() => this.toggle()} />
         <div className="header">
           <h1>
-            <a href="/">Azer Koçulu</a>
+            <a href="/">Banti Gheneti</a>
           </h1>
         </div>
 

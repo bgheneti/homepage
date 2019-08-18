@@ -5,9 +5,15 @@ export const icons = [
   // Github
   {
     title: 'Github',
-    link: 'https://github.com/azer',
+    link: 'https://github.com/bgheneti',
     svg: '<svg viewBox="0 0 800 800"><path d="M400 139c144 0 260 116 260 260 0 115-75 213-178 247-9 3-17-2-17-13v-71c0-35-18-48-18-48 57-6 119-28 119-128 0-44-27-70-27-70s14-29-2-69c0 0-22-7-72 27-42-12-88-12-130 0-50-34-72-27-72-27-16 40-2 69-2 69s-27 26-27 70c0 100 62 122 119 128 0 0-14 10-17 35-15 7-53 18-76-22 0 0-13-25-39-27 0 0-26 0-2 16 0 0 17 8 29 38 0 0 16 51 88 35v44c0 11-9 16-18 13-103-34-178-132-178-247 0-144 116-260 260-260z"/></svg>'
   },
+  // LinkedIn
+  {
+    title: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/bgheneti/',
+    svg: '<svg viewBox="0 0 800 800"><path d="M268 629h-97V319h97zm157 0h-97V319h93v42h1q31-50 93-50 114 0 114 133v185h-96V466q0-70-49-70-59 0-59 69z" /><circle cx="219" cy="220" r="56"/></svg>'
+  }/*,
   // Instagram
   {
     title: 'Instagram',
@@ -30,6 +36,7 @@ export const icons = [
     title: 'Facebook',
     svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg>'
   }
+*/
 ]
 
 export default class SocialIcons extends Component {

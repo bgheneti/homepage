@@ -1,6 +1,3 @@
 [
-  { "to": "/journal", "title": "Journal" },
-  { "to": "/software", "title": "Software" },
-  { "to": "/photography", "title": "Photography" },
-  { "to": "https://github.com/azer/notebook", "title": "Notebook" }
+  { "to": "/", "title": "Bio" }
 ]

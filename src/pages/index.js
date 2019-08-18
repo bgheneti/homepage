@@ -1,107 +1,180 @@
 import React, { Component } from "react"
-import Link from "gatsby-link"
-import Intro from "../components/intro"
-import Helmet from "react-helmet"
 import SimpleLayout from "../components/simple-layout"
-import Button from "../components/Button"
-import Textbox from "../components/Textbox"
+import Link from "gatsby-link"
+import Helmet from "react-helmet"
+
 import Newsletter from "../components/Newsletter"
 import PageHeader from "../components/page-header"
+import Title from "../components/page-title"
+import debounce from "debounce-fn"
+import "./photography.css"
 
-import "./index.css"
+export default class Photography extends Component {
+  constructor(props) {
+    super(props)
+    this.onResize = debounce(this.onResize.bind(this), 500)
+  }
 
-export default class Homepage extends Component {
-  highlightedPosts() {
-    return this.props.data.allMarkdownRemark.edges.filter(e => {
-      return e.node.frontmatter.highlighted
+  componentWillMount() {
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", this.onResize)
+    }
+
+    this.setState({
+      selected: null,
+      thumbnailSize: this.findThumbnailSize(),
+      columns: this.createColumns()
     })
   }
 
-  recentPosts() {
-    return this.props.data.allMarkdownRemark.edges.slice(0, 5)
+  componentWillUnmount() {
+    if (typeof window !== "undefined") {
+      window.removeEventListener("resize", this.onResize)
+    }
+  }
+
+  createColumns() {
+    const photos = this.props.data.allPhotosJson.edges
+    const count = this.findColumnCount()
+    const thumbnailSize = this.findThumbnailSize()
+    const columns = []
+
+    let c = count
+    while (c--) {
+      columns.push({ height: 0, photos: [] })
+    }
+
+    const len = photos.length
+    let i = -1
+    while (++i < len) {
+      let column = columns[0]
+
+      // Add next photo to the column with lowest height
+      let c = 0
+      while (++c < count) {
+        if (columns[c].height < column.height) column = columns[c]
+      }
+
+      let p = photos[i].node
+      column.photos.push(p)
+      column.height += p.sizes[thumbnailSize].height
+    }
+
+    return columns
+  }
+
+  findColumnCount() {
+    if (typeof window === "undefined") return 3
+
+    const width = window.innerWidth
+
+    if (width < 900) return 2
+    return 3
+  }
+
+  findThumbnailSize() {
+    return "medium"
+    if (typeof window === "undefined") return "small"
+
+    const width = window.innerWidth
+
+    if (width < 500) return "small"
+    return "medium"
+  }
+
+  onResize() {
+    this.setState({
+      selected: null,
+      thumbnailSize: this.findThumbnailSize(),
+      columns: this.createColumns()
+    })
   }
 
   render() {
+    const title = `Photography - ${this.props.data.site.siteMetadata.title}`
+
     return (
       <SimpleLayout
-        name="index"
+        name="photography"
         location={this.props.location}
-        title={this.props.data.site.siteMetadata.title}
-        desc="My name is Azer Koçulu. I build software, also shoot photos."
-        type="website"
-        image="https://cldup.com/go95bqT7sK.jpg"
+        type="photos"
+        title={title}
+        desc="robotics, society, and computer science"
+        url="https://gheneti.com"
+        image="http://web.mit.edu/bgheneti/www/profile.jpg"
       >
-        <PageHeader image="https://c1.staticflickr.com/5/4353/37319896181_52a796bcc7.jpg">
-          <strong>Azer Koçulu</strong> is a Software Engineer based in Berlin.
-          Lover of fast, minimalist experiences. Maker of Kozmos and Happy
-          Hacking Linux.
+         <PageHeader image="http://web.mit.edu/bgheneti/www/profile.jpg">
+
+
+          Played a couple of hours a day playing with autonomous boats at the <a href="http://senseable.mit.edu/roboat/">Senseable City Lab</a>.
+          Finished my <a href="https://dspace.mit.edu/handle/1721.1/121672">Master's thesis on making shapes out of robots</a> and planning my life afterwards.
+          Learning new tricks by going to classes in <a href="http://underactuated.mit.edu">control systems</a> and machine learning.
+          Sporadically attends <a href="https://www.youtube.com/watch?v=7ROelYvo8f0&amp;feature=youtu.be">neuroscience</a> and global development talks around <a href="http://calendar.mit.edu/">MIT</a>.
+          Enjoys tea (green, black, chamomile), <a href="http://vo2vegancafe.com/">vegan food</a>, community radio (<a href="http://wmbr.org/">WMBR</a>, <a href="http://dublab.com/">dublab</a>), and sleep.
         </PageHeader>
-        <div className="pt4 highlights-wrapper">
-          <h1 className="x-sans fw3 tc pv0 mid-gray">Journal Highlights</h1>
-          <section className="x-grid-4 mt4 highlights">
-            {this.highlightedPosts().map((post, ind) =>
-              this.renderHighlightedPost(post, ind)
-            )}
-          </section>
-        </div>
-        <Newsletter />
+        <div className="photos">{this.renderGrid()}</div>
+        {/*<Newsletter />*/}
       </SimpleLayout>
     )
   }
 
-  renderHighlightedPost(post, color) {
-    const img = {
-      backgroundImage: `url(${post.node.frontmatter.highlightImage ||
-        post.node.frontmatter.image})`,
-      backgroundPosition: `${post.node.frontmatter.highlightImagePosition ||
-        "center center"}`,
-      backgroundSize: `${post.node.frontmatter.highlightImageSize || "cover"}`
+  renderGrid() {
+    const photos = this.props.data.allPhotosJson.edges
+    const columns = [[], []]
+
+    const len = photos.length
+    let i = -1
+
+    while (++i < len) {
+      columns[i % columns.length].push(photos[i].node)
     }
 
     return (
-      <a
-        href={post.node.frontmatter.path}
-        className="highlighted-post x-noborder relative"
-      >
-        <header className="absolute top-0 tc bg-near-white w-100">
-          <h4 className="x-mono silver mt0 mb1">
-            {new Date(post.node.frontmatter.date).getFullYear()}
-          </h4>
+      <div className="grid">
+        {columns.map(c => this.renderColumn(c))}
+        <div className="x-clear" />
+      </div>
+    )
+  }
 
-          <h2 className="f5 lh-copy ph3 mid-gray w-95">
-            {post.node.frontmatter.title}
-          </h2>
-        </header>
-        <div className="w-100 x-color-overlay image">
-          <div className="w-100 h-100 x-grayscale" style={img} />
-        </div>
-      </a>
+  renderColumn(column) {
+    return (
+      <div className="column">{column.map(p => this.renderThumbnail(p))}</div>
+    )
+  }
+
+  renderThumbnail(p) {
+    return (
+      <div className="thumbnail x-sans">
+        <Link className="caption center" to={p.path}>
+          <h1>{p.title}</h1>
+        </Link>
+        <Link to={p.path}>
+          <img src={p.sizes[this.state.thumbnailSize].url} />
+        </Link>
+      </div>
     )
   }
 }
 
 export const query = graphql`
-  query HomepageQuery {
+  query PhotographyQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+
+    allPhotosJson {
       edges {
         node {
-          excerpt
-          frontmatter {
-            path
-            date(formatString: "DD MMMM, YYYY")
-            highlighted
-            highlightImage
-            highlightImagePosition
-            highlightImageSize
-          }
-          frontmatter {
-            title
-            image
+          path
+          title
+          sizes {
+            medium {
+              url
+              height
+            }
           }
         }
       }
