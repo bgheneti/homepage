@@ -9,9 +9,6 @@ sections:
   label: pages
   create: all
   match: "**/*"
-- type: document
-  path: src/pages
-  label: homepage
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
